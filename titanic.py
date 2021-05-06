@@ -33,11 +33,11 @@ for i,data in df.iterrows():
 #############one hot encoding for Pclass############################
 pd.get_dummies(df['Pclass'], prefix='class')
 df=pd.concat([df,pd.get_dummies(df['Pclass'], prefix='class')],axis=1)
-st.dataframe(df)
+#st.dataframe(df)
 
 ################ std scaler operation on Fare and Age ####################
 #st.dataframe(X_train['Fare'])
-print(df['Fare'].values)
+#print(df['Fare'].values)
 from sklearn.preprocessing import StandardScaler
 sc = StandardScaler()
 #convert Series to array then reshape and learn the distribution in sc object
@@ -54,7 +54,7 @@ df['Age_stdScaler']=pd.DataFrame(df_Age1)
 #########################Remove Pclass Age Fare Sibsp Parch from dataframe #############
 df.drop(['Pclass','Age','Fare','SibSp','Parch'],axis=1, inplace=True)
 ####### display the reqd dataframe #############
-st.dataframe(df)
+#st.dataframe(df)
 ############################################
 ################# define the feature and target ###########
 X = df.drop("Survived", axis=1)
@@ -64,7 +64,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 df[df.isnull().any(axis=1)]  # whereever null show that row
 ###############################
-print(X_train.columns)
+#print(X_train.columns)
 # Creating FastAPI instance
 app = FastAPI()
 ############## data struc for input request
