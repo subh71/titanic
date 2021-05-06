@@ -8,8 +8,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 
 
-df = pd.read_csv("train.csv",
-                 header=0,usecols=[2,4,5,6,7,9,1])
+df=pd.read_csv("train.csv",header=0,usecols=[2,4,5,6,7,9,1])
 ############# family size #############
 for i, data in df.iterrows():
     df.at[i,'FamilySize'] = data['SibSp'] + data['Parch'] + 1
