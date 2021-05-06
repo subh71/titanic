@@ -125,22 +125,5 @@ def UI_Page():
     except Exception as e:   # user way of writing error
          st.info(e)
 
-@app.post('/predict')
-def predict(data: request_body):
-    # Making the data in a form suitable for prediction
-    test_data = [[
-        data.pclass,
-        data.age,
-        data.familysize,
-        data.gender,
-        data.fare,
-    ]]
-
-    # Predicting the Class
-    class_idx = loaded_model.predict(test_data)[0]
-
-    # Return the Result
-    return {'survived': class_idx}
-
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
