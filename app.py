@@ -1,3 +1,3 @@
 import streamlit
-from titanic import UI_Page
+from titanic1 import UI_Page
 UI_Page()
