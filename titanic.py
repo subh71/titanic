@@ -101,7 +101,7 @@ def UI_Page():
     age=st.slider("Age :",min_value=1,max_value=95)
     from numpy import asarray
     df_Age_scaled = sc.transform(asarray(age).reshape(1,-1))
-    print("$$$",df_Age_scaled)
+    #print("$$$",df_Age_scaled)
     gender=st.radio('Gender', ['Male','Female'])
     if gender=='Male':
         g=1
@@ -111,7 +111,7 @@ def UI_Page():
     fare=st.text_input("Fare :")
 
     df_Fare_scaled = sc.transform(asarray(fare).reshape(1,-1))
-    print("$$$",df_Fare_scaled)
+    #print("$$$",df_Fare_scaled)
     ok=st.button("Predict the Survival")  # ok has True value when user clicks button
     try:
         if ok==True:       # if user pressed ok button then True passed
